@@ -128,15 +128,24 @@
             transform: scale(1.05);
         }
 
-        .games {
-            padding: 80px 0;
-            background: #0f0f1a;
-        }
-
         .section-title {
             text-align: center;
             font-size: 36px;
             margin-bottom: 50px;
+        }
+
+        /* Games Grid */
+        .games, .portfolio, .upcoming, .devlog {
+            padding: 80px 0;
+            background: #0f0f1a;
+        }
+
+        .portfolio {
+            background: #1a1a2e;
+        }
+
+        .upcoming {
+            background: #0f0f1a;
         }
 
         .games-grid {
@@ -174,8 +183,29 @@
             padding: 8px 20px;
             text-decoration: none;
             border-radius: 20px;
+            margin: 5px;
         }
 
+        /* Dev Log */
+        .devlog-post {
+            background: #1a1a2e;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+
+        .devlog-post h3 {
+            color: #ff6b35;
+            margin-bottom: 10px;
+        }
+
+        .devlog-post .date {
+            font-size: 12px;
+            color: #888;
+            margin-bottom: 15px;
+        }
+
+        /* About Section */
         .about {
             padding: 80px 0;
             background: #1a1a2e;
@@ -198,6 +228,28 @@
             color: #ccc;
         }
 
+        .studio-logo {
+            text-align: center;
+        }
+
+        .studio-logo .large-logo {
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(135deg, #ff6b35, #ff8c42);
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            box-shadow: 0 10px 30px rgba(255,107,53,0.3);
+        }
+
+        .studio-logo .large-logo span {
+            font-size: 80px;
+            font-weight: bold;
+            color: white;
+        }
+
         .skills {
             display: flex;
             flex-wrap: wrap;
@@ -212,10 +264,49 @@
             font-size: 14px;
         }
 
+        /* Contact Section */
         .contact {
             padding: 80px 0;
             background: #0f0f1a;
             text-align: center;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 30px auto 0;
+            text-align: left;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #ccc;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 8px;
+            border: none;
+            background: #1a1a2e;
+            color: white;
+        }
+
+        .form-group textarea {
+            height: 100px;
+        }
+
+        .submit-btn {
+            background: #ff6b35;
+            color: white;
+            padding: 10px 25px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
         }
 
         .social-links {
@@ -234,6 +325,35 @@
 
         .social-links a:hover {
             color: #ff6b35;
+        }
+
+        /* Press Kit */
+        .presskit {
+            padding: 80px 0;
+            background: #1a1a2e;
+            text-align: center;
+        }
+
+        .presskit .btn {
+            margin: 10px;
+        }
+
+        /* Support Section */
+        .support {
+            padding: 60px 0;
+            background: #0f0f1a;
+            text-align: center;
+        }
+
+        .donate-btn {
+            background: #ff6b35;
+            color: white;
+            padding: 15px 40px;
+            font-size: 18px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            margin-top: 20px;
         }
 
         footer {
@@ -274,6 +394,8 @@
                     <ul>
                         <li><a href="#home">Home</a></li>
                         <li><a href="#games">Games</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#devlog">Dev Log</a></li>
                         <li><a href="#about">About</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
@@ -287,9 +409,11 @@
             <h1>Welcome to <span>Relvix Games</span></h1>
             <p>We create immersive 2D gaming experiences that captivate and inspire.</p>
             <a href="#games" class="btn">Explore Our Games</a>
+            <a href="#contact" class="btn" style="background: transparent; border: 2px solid #ff6b35; margin-left: 15px;">Contact Us</a>
         </div>
     </section>
 
+    <!-- Games Section -->
     <section id="games" class="games">
         <div class="container">
             <h2 class="section-title">Our Games</h2>
@@ -297,25 +421,88 @@
                 <div class="game-card">
                     <h3>🚀 Endless Space Runner</h3>
                     <p>A 2D endless runner space game. Dodge asteroids, collect power-ups, fight bosses, and unlock skins.</p>
-                    <a href="https://relvixgames.itch.io/endless-space-runner" target="_blank" class="game-btn">Play Now</a>
+                    <a href="https://relvixgames.itch.io/endless-space-runner" target="_blank" class="game-btn">Play on Itch.io</a>
                 </div>
                 <div class="game-card">
                     <h3>🎲 Snake and Ladder</h3>
                     <p>Classic board game with 4 players, 7 boards, robot opponents, and background music.</p>
-                    <a href="https://relvixgames.itch.io/snake-and-ladder" target="_blank" class="game-btn">Play Now</a>
-                </div>
-                <div class="game-card">
-                    <h3>🔍 Word Search</h3>
-                    <p>Coming Soon! A challenging word puzzle game.</p>
-                    <a href="#" class="game-btn">Coming Soon</a>
+                    <a href="https://relvixgames.itch.io/snake-and-ladder" target="_blank" class="game-btn">Play on Itch.io</a>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Portfolio / All Games Section -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <h2 class="section-title">Complete Portfolio</h2>
+            <div class="games-grid">
+                <div class="game-card">
+                    <h3>🚀 Endless Space Runner</h3>
+                    <p>Released: 2025 | Genre: Endless Runner | Platform: PC</p>
+                    <a href="https://relvixgames.itch.io/endless-space-runner" target="_blank" class="game-btn">Play Now</a>
+                    <a href="https://github.com/nandini0403006" target="_blank" class="game-btn">Source Code</a>
+                </div>
+                <div class="game-card">
+                    <h3>🎲 Snake and Ladder</h3>
+                    <p>Released: 2026 | Genre: Board Game | Platform: PC</p>
+                    <a href="https://relvixgames.itch.io/snake-and-ladder" target="_blank" class="game-btn">Play Now</a>
+                    <a href="https://github.com/nandini0403006" target="_blank" class="game-btn">Source Code</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upcoming Games Section -->
+    <section id="upcoming" class="upcoming">
+        <div class="container">
+            <h2 class="section-title">Upcoming Games</h2>
+            <div class="games-grid">
+                <div class="game-card">
+                    <h3>🔍 Word Search</h3>
+                    <p>A challenging word puzzle game. Find hidden words in a grid. Coming 2026.</p>
+                    <span class="game-btn" style="background: #555;">In Development</span>
+                </div>
+                <div class="game-card">
+                    <h3>🎮 Secret Project</h3>
+                    <p>Something exciting is brewing. Stay tuned for announcements!</p>
+                    <span class="game-btn" style="background: #555;">Announcing Soon</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dev Log / Blog Section -->
+    <section id="devlog" class="devlog">
+        <div class="container">
+            <h2 class="section-title">Developer Log</h2>
+            <div class="devlog-post">
+                <h3>Website Launch!</h3>
+                <div class="date">April 21, 2026</div>
+                <p>Relvix Games official website is now live! Check out our games and follow for updates.</p>
+            </div>
+            <div class="devlog-post">
+                <h3>Snake and Ladder Published</h3>
+                <div class="date">April 2026</div>
+                <p>Our second game, Snake and Ladder, is now available on itch.io. Features 4 players, 7 boards, and robot opponents.</p>
+            </div>
+            <div class="devlog-post">
+                <h3>Endless Space Runner Released</h3>
+                <div class="date">December 2025</div>
+                <p>Our first game, Endless Space Runner, launched on itch.io. Includes boss battles, power-ups, and achievements.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
             <div class="about-content">
+                <div class="studio-logo">
+                    <div class="large-logo">
+                        <span>RG</span>
+                    </div>
+                </div>
                 <div class="about-text">
                     <h3>About Relvix Games</h3>
                     <p>Relvix Games was founded by Nandini K, a passionate game developer. We specialize in creating engaging 2D games using Python and Pygame.</p>
@@ -328,15 +515,42 @@
                         <span class="skill">2D Development</span>
                     </div>
                 </div>
+            </div>
+            <div class="about-content" style="margin-top: 50px;">
                 <div class="about-text">
                     <h3>Our Journey</h3>
                     <p>Founded in December 2025, Relvix Games has published 2 complete games on itch.io. We are currently working on Word Search and planning more exciting projects.</p>
                     <p>Future plans include publishing on Google Play Store and expanding to mobile platforms.</p>
                 </div>
+                <div class="about-text">
+                    <h3>GitHub</h3>
+                    <p>View our source code and contribute to our open-source projects.</p>
+                    <a href="https://github.com/nandini0403006" target="_blank" class="btn">Visit GitHub</a>
+                </div>
             </div>
         </div>
     </section>
 
+    <!-- Press Kit / Media Section -->
+    <section id="presskit" class="presskit">
+        <div class="container">
+            <h2 class="section-title">Press Kit</h2>
+            <p>Download logos, screenshots, and other media assets for press coverage.</p>
+            <a href="#" class="btn">Download Press Kit (Coming Soon)</a>
+            <a href="https://relvixgames.itch.io" target="_blank" class="btn">View All Games</a>
+        </div>
+    </section>
+
+    <!-- Support Section -->
+    <section id="support" class="support">
+        <div class="container">
+            <h2 class="section-title">Support Relvix Games</h2>
+            <p>Your support helps us create better games and keep developing.</p>
+            <button class="donate-btn" onclick="alert('Thank you for your support! Payment options coming soon.')">☕ Support Us</button>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
             <h2 class="section-title">Connect With Us</h2>
@@ -346,13 +560,41 @@
                 <a href="https://github.com/nandini0403006" target="_blank">💻 GitHub</a>
                 <a href="https://www.linkedin.com/in/nandini-k-23288b352" target="_blank">🔗 LinkedIn</a>
                 <a href="#" target="_blank">📷 Instagram (Coming Soon)</a>
+                <a href="#" target="_blank">🐦 Twitter (Coming Soon)</a>
             </div>
-            <p style="margin-top: 30px;">Email: relvixgames@gmail.com</p>
+            <div class="contact-form">
+                <h3>Send us a message</h3>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Message</label>
+                        <textarea id="message" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+                <p style="margin-top: 20px; font-size: 14px;">Or email us directly: <strong>relvixgames@gmail.com</strong></p>
+            </div>
         </div>
     </section>
 
     <footer>
         <p>&copy; 2026 Relvix Games. All rights reserved. | Created by Nandini K</p>
     </footer>
+
+    <script>
+        // Simple contact form handling
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! I will get back to you soon.');
+            this.reset();
+        });
+    </script>
 </body>
 </html>
