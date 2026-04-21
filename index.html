@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relvix Games</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            line-height: 1.6;
+        }
+
+        header {
+            background: rgba(0,0,0,0.8);
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        /* Logo Styles */
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-icon {
+            width: 55px;
+            height: 55px;
+            background: linear-gradient(135deg, #ff6b35, #ff8c42);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(255,107,53,0.3);
+        }
+
+        .logo-icon span {
+            font-size: 28px;
+            font-weight: bold;
+            color: white;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .logo-text h1 {
+            color: #ff6b35;
+            font-size: 28px;
+        }
+
+        .logo-text p {
+            font-size: 12px;
+            color: #ccc;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ff6b35;
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #ff6b35;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            color: #ccc;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #ff6b35;
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 30px;
+            transition: transform 0.3s;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+        }
+
+        .games {
+            padding: 80px 0;
+            background: #0f0f1a;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 50px;
+        }
+
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .game-card {
+            background: #1a1a2e;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .game-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .game-card h3 {
+            font-size: 24px;
+            margin: 15px 0;
+        }
+
+        .game-card p {
+            color: #ccc;
+            margin-bottom: 20px;
+        }
+
+        .game-btn {
+            display: inline-block;
+            background: #ff6b35;
+            color: white;
+            padding: 8px 20px;
+            text-decoration: none;
+            border-radius: 20px;
+        }
+
+        .about {
+            padding: 80px 0;
+            background: #1a1a2e;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            color: #ccc;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .skill {
+            background: #ff6b35;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+
+        .contact {
+            padding: 80px 0;
+            background: #0f0f1a;
+            text-align: center;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .social-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #ff6b35;
+        }
+
+        footer {
+            background: #000;
+            text-align: center;
+            padding: 20px;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            .hero h1 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <span>RG</span>
+                    </div>
+                    <div class="logo-text">
+                        <h1>Relvix Games</h1>
+                        <p>Creating Worlds, One Game at a Time</p>
+                    </div>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#games">Games</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>Welcome to <span>Relvix Games</span></h1>
+            <p>We create immersive 2D gaming experiences that captivate and inspire.</p>
+            <a href="#games" class="btn">Explore Our Games</a>
+        </div>
+    </section>
+
+    <section id="games" class="games">
+        <div class="container">
+            <h2 class="section-title">Our Games</h2>
+            <div class="games-grid">
+                <div class="game-card">
+                    <h3>🚀 Endless Space Runner</h3>
+                    <p>A 2D endless runner space game. Dodge asteroids, collect power-ups, fight bosses, and unlock skins.</p>
+                    <a href="https://relvixgames.itch.io/endless-space-runner" target="_blank" class="game-btn">Play Now</a>
+                </div>
+                <div class="game-card">
+                    <h3>🎲 Snake and Ladder</h3>
+                    <p>Classic board game with 4 players, 7 boards, robot opponents, and background music.</p>
+                    <a href="https://relvixgames.itch.io/snake-and-ladder" target="_blank" class="game-btn">Play Now</a>
+                </div>
+                <div class="game-card">
+                    <h3>🔍 Word Search</h3>
+                    <p>Coming Soon! A challenging word puzzle game.</p>
+                    <a href="#" class="game-btn">Coming Soon</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>About Relvix Games</h3>
+                    <p>Relvix Games was founded by Nandini K, a passionate game developer and B.Sc Data Science student. We specialize in creating engaging 2D games using Python and Pygame.</p>
+                    <p>Our mission is to build games that are fun, accessible, and memorable. We believe in the power of games to bring people together.</p>
+                    <div class="skills">
+                        <span class="skill">Python</span>
+                        <span class="skill">Pygame</span>
+                        <span class="skill">Unity</span>
+                        <span class="skill">Game Design</span>
+                        <span class="skill">2D Development</span>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <h3>Our Journey</h3>
+                    <p>Started in 2024, Relvix Games has published 2 complete games on itch.io. We are currently working on Word Search and planning more exciting projects.</p>
+                    <p>Future plans include publishing on Google Play Store and expanding to mobile platforms.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Connect With Us</h2>
+            <p>Follow us on social media for updates and behind-the-scenes content.</p>
+            <div class="social-links">
+                <a href="https://relvixgames.itch.io" target="_blank">🎮 Itch.io</a>
+                <a href="https://github.com/nandini0403006" target="_blank">💻 GitHub</a>
+                <a href="https://www.linkedin.com/in/nandini-k-23288b352" target="_blank">🔗 LinkedIn</a>
+                <a href="#" target="_blank">📷 Instagram (Coming Soon)</a>
+            </div>
+            <p style="margin-top: 30px;">Email: relvixgames@gmail.com</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Relvix Games. All rights reserved. | Created by Nandini K</p>
+    </footer>
+</body>
+</html>
